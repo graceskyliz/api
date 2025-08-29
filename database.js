@@ -7,10 +7,11 @@ const db = new sqlite3.Database("./database.db", (err) => {
   } else {
     console.log("Conectado a SQLite.");
 
-    db.run(`CREATE TABLE IF NOT EXISTS users (
+    db.run(`CREATE TABLE IF NOT EXISTS plants (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL
+        species TEXT NOT NULL,
+        watering_frequency TEXT
       )`);
   }
 });
